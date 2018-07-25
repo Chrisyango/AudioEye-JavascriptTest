@@ -12,7 +12,7 @@
 function numberGradeIntoLetterGrade(numberGrade) {
   // Create an object to properly give each number grade a letter grade
   const gradingSystem = {
-    // Each key has a function that returns either true of false
+    // Each key has a function that returns either true of false. We can use this object to figure out number grade corresponds to what letter grade.
     'Out of Range': function(num) {
       return (101 <= num || !Number.isInteger(num));
     },
@@ -34,7 +34,7 @@ function numberGradeIntoLetterGrade(numberGrade) {
   const letters = (Object.keys(gradingSystem));
 
   let letterGrade;
-  // Map through the letters in the gradingSystem
+  // Go through the letters in the gradingSystem
   letters.some(letter => {
     // If the gradingSystem's key's functions ever return true, set letterGrade to equal the letter
     if (gradingSystem[letter](numberGrade)) {
